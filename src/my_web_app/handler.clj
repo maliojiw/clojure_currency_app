@@ -7,12 +7,10 @@
             [clj-http.client :as client]
             [cheshire.core :as cheshire]
             [ring.util.response :as response]
-            [environ.core :refer [env]]))  ;; Use environ
-
-;; Fetch API_KEY from the environment (either from system or .env)
+            [environ.core :refer [env]]))  
+ 
 (def api-key (env :API_KEY))
 (def api-key (System/getenv "API_KEY"))
-(println "API_KEY from .env: " api-key)
 (println "API_KEY from .env: " api-key)
 (def base-url "https://v6.exchangerate-api.com/v6/")
 
@@ -36,7 +34,7 @@
           {:error "Failed to fetch exchange rates"})))))
 
 
-;; Function to render the exchange rates page
+
 (defn exchange-rates-page []
   (let [rates (fetch-exchange-rates)]
     (html5
