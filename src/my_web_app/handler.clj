@@ -11,7 +11,6 @@
  
 (def api-key (env :API_KEY))
 (def api-key (System/getenv "API_KEY"))
-(println "API_KEY from .env: " api-key)
 (def base-url "https://v6.exchangerate-api.com/v6/")
 
 
