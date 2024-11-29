@@ -67,7 +67,7 @@
         (for [[currency rate] rates]
           [:li (str currency ": " rate)])]]])))
 
-;; Define the routes for the app
+
 (defroutes app-routes
   (GET "/" [] (exchange-rates-page))
   (GET "/exchange-rates" [] (response/content-type
